@@ -12,7 +12,8 @@ export default async function handler(req, res) {
   delete headers.host;
 
   try {
-    const response = await fetch(`${DJANGO_API_URL}${requestPath}`, {
+    const finalUrl = new URL(requestPath, DJANGO_API_URL).toString();
+    const response = await fetch(finalUrl, {
       method: req.method,
       headers: {
         ...headers,
