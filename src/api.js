@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 const API = axios.create({
-  baseURL: "/api/proxy",
+  baseURL: "/",
 });
 
 API.interceptors.request.use((config) => {

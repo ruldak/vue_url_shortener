@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   delete headers.host;
 
   try {
-    const response = await fetch(`${DJANGO_API_URL}${requestPath}`, {
+    const response = await fetch(`${DJANGO_API_URL}/api${requestPath}`, {
       method: req.method,
       headers: {
         ...headers,

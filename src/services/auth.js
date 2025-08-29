@@ -23,7 +23,7 @@ export function useAuth() {
 
   const register = async (username, email, password) => {
     // Axios akan otomatis melempar error jika response.ok adalah false
-    await API.post('/register/', { username, email, password });
+    await API.post('/api/register/', { username, email, password });
     // Setelah registrasi berhasil, langsung login
     await login(username, password);
   };
