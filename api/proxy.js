@@ -1,4 +1,5 @@
 export default async function handler(req, res) {
+  res.setHeader('X-Proxy-Debug', 'true');
   const DJANGO_API_URL = process.env.VITE_DJANGO_API_URL;
   const API_KEY = process.env.DJANGO_API_KEY;
 
