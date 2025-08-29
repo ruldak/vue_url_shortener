@@ -17,7 +17,6 @@ export default async function handler(req, res) {
       headers: {
         ...headers,
         'X-API-Key': API_KEY,
-        ...(req.body && { 'Content-Type': 'application/json' }),
       },
       body: req.body ? JSON.stringify(req.body) : null,
     });
