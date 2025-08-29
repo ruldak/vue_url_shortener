@@ -6,7 +6,10 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Server configuration error.' });
   }
 
-  const requestPath = req.url;
+  let requestPath = req.url;
+  if (requestPath === '/api/auth/register/') {
+    requestPath = '/api/register/';
+  }
 
   const headers = { ...req.headers };
   delete headers.host;
