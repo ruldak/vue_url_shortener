@@ -1,5 +1,4 @@
 export default async function handler(req, res) {
-  res.setHeader('X-Proxy-Debug', 'true');
   const DJANGO_API_URL = process.env.VITE_DJANGO_API_URL;
   const API_KEY = process.env.DJANGO_API_KEY;
 
@@ -7,10 +6,7 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Server configuration error.' });
   }
 
-  let requestPath = req.url;
-  if (requestPath === '/api/auth/register/') {
-    requestPath = '/api/register/';
-  }
+  const requestPath = req.url;
 
   const headers = { ...req.headers };
   delete headers.host;
