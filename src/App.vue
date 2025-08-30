@@ -97,7 +97,7 @@ main {
   font-size: 16px;
 }
 .auth-toggle button.active {
-  background: #007bff;
+  background: #FF9800;
   color: white;
   font-weight: 600;
 }

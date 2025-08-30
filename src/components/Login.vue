@@ -41,4 +41,32 @@ input { display: block; margin: 10px auto; padding: 8px; width: 90%; }
 button { margin-top: 10px; }
 .error { color: red; margin-top: 10px; }
 .success { color: green; margin-top: 10px; }
+
+input[type="password"], input[type="text"] {
+  border: 2px solid #dee2e6;
+  border-radius: 12px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="password"]:focus, input[type="text"]:focus {
+  outline: none;
+  border-color: #FF9800;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
+}
+
+button {
+  padding: 6px 20px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #fff;
+  background-color: #FF9800;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0 auto;
+}
 </style>

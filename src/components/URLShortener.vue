@@ -315,12 +315,12 @@ h1 {
   border: 2px solid #dee2e6;
   border-radius: 12px;
   transition: border-color 0.3s, box-shadow 0.3s;
-  min-width: 520px;
+  width: 520px;
 }
 
 .url-form input[type="url"]:focus, .url-form input[type="text"]:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #FF9800;
   box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
 }
 
@@ -329,7 +329,7 @@ h1 {
   font-size: 18px;
   font-weight: 600;
   color: #fff;
-  background-color: #007bff;
+  background-color: #FF9800;
   border: none;
   border-radius: 12px;
   cursor: pointer;
@@ -341,7 +341,7 @@ h1 {
 }
 
 .url-form button:hover {
-  background-color: #0056b3;
+  background-color: #c27402;
   transform: translateY(-3px);
   box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
 }
@@ -423,6 +423,12 @@ h1 {
     justify-content: space-between;
     align-items: center;
     padding: 20px 25px;
+  }
+}
+
+@media (max-width: 425px) {
+  .url-form input[type="url"], .url-form input[type="text"] {
+    width: 200px;
   }
 }
 
