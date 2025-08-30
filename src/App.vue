@@ -2,7 +2,7 @@
   <div id="app-layout">
     <header>
       <nav>
-        <h1>My URL Shortener</h1>
+        <h1>URL Shortener</h1>
         <div v-if="isAuthenticated">
           <button @click="handleLogout" class="logout-button">Logout</button>
         </div>
