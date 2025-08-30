@@ -21,6 +21,9 @@
 
       <URLShortener />
     </main>
+    <footer>
+      <p>Made with ❤️ by <a href="https://github.com/ruldak" target="_blank">Hari Cahyono</a></p>
+    </footer>
   </div>
 </template>
 
@@ -100,5 +103,10 @@ main {
   background: #FF9800;
   color: white;
   font-weight: 600;
+}
+
+footer {
+  width: fit-content;
+  margin: 0 auto 0 auto;
 }
 </style>
