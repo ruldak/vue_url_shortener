@@ -40,8 +40,8 @@ To run this project in your local environment, follow these steps:
 
 **1. Clone the Repository**
 ```bash
-git clone https://github.com/username/repo-frontend.git
-cd repo-frontend
+git clone https://github.com/ruldak/vue_url_shortener.git your_directory
+cd your_directory
 ```
 
 **2. Install Dependencies**
