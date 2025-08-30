@@ -531,10 +531,14 @@ h1 {
   padding: 40px;
   border-radius: 20px;
   width: 90%;
+  height: 85%;
   max-width: 600px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
   text-align: left;
+  overflow: auto;
+  scrollbar-color: gray transparent;
+  scrollbar-width: thin;
 }
 .modal-content h2 {
   margin-top: 0;
