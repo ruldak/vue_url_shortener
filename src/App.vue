@@ -10,7 +10,7 @@
     </header>
 
     <main>
-      <div class="auth-container">
+      <div v-if="!isAuthenticated" class="auth-container">
         <div class="auth-toggle">
           <button :class="{ active: !showRegister }" @click="showRegister = false">Login</button>
           <button :class="{ active: showRegister }" @click="showRegister = true">Register</button>

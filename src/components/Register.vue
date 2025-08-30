@@ -5,7 +5,10 @@
       <input type="text" v-model="username" placeholder="Username" required />
       <input type="email" v-model="email" placeholder="Email" required />
       <input type="password" v-model="password" placeholder="Password" required />
-      <button type="submit">Register</button>
+      <button type="submit" :disabled="isLoading">
+        <span v-if="!isLoading">Register</span>
+        <div v-if="isLoading" class="spinner"></div>
+      </button>
       <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
       <p v-if="successMessage" class="success">{{ successMessage }}</p>
     </form>
@@ -21,15 +24,19 @@ const email = ref('');
 const password = ref('');
 const errorMessage = ref(null);
 const successMessage = ref(null);
+const isLoading = ref(false);
 const { register } = useAuth();
 
 const handleRegister = async () => {
   errorMessage.value = null;
+  isLoading.value = true;
   try {
     await register(username.value, email.value, password.value);
     successMessage.value = 'Registration successful! You can now log in.';
   } catch (err) {
     errorMessage.value = err.message;
+  } finally {
+    isLoading.value = false;
   }
 };
 </script>
@@ -66,5 +73,25 @@ button {
   align-items: center;
   justify-content: center;
   margin: 10px auto 0 auto;
+  min-height: 31px;
+}
+
+button:disabled {
+  background-color: #ff9800a6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 3px solid #fff;
+  width: 15px;
+  height: 15px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 </style>

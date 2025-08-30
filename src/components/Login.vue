@@ -4,7 +4,10 @@
     <form @submit.prevent="handleLogin">
       <input type="text" v-model="username" placeholder="Username" required />
       <input type="password" v-model="password" placeholder="Password" required />
-      <button type="submit">Login</button>
+      <button type="submit" :disabled="isLoading">
+        <span v-if="!isLoading">Login</span>
+        <div v-if="isLoading" class="spinner"></div>
+      </button>
       <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
       <p v-if="successMessage" class="success">{{ successMessage }}, <button @click="refreshPage">refresh</button></p>
     </form>
@@ -19,6 +22,7 @@ const username = ref('');
 const password = ref('');
 const errorMessage = ref(null);
 const successMessage = ref(null);
+const isLoading = ref(false);
 const { login } = useAuth();
 
 const refreshPage = () => window.location.reload();
@@ -26,11 +30,14 @@ const refreshPage = () => window.location.reload();
 const handleLogin = async () => {
   errorMessage.value = null;
   successMessage.value = null;
+  isLoading.value = true;
   try {
     await login(username.value, password.value);
     successMessage.value = 'Login successful!';
   } catch (err) {
     errorMessage.value = err.message;
+  } finally {
+    isLoading.value = false;
   }
 };
 </script>
@@ -68,5 +75,25 @@ button {
   align-items: center;
   justify-content: center;
   margin: 0 auto 0 auto;
+  min-height: 31px;
+}
+
+button:disabled {
+  background-color: #ff9800a6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 3px solid #fff;
+  width: 15px;
+  height: 15px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 </style>
