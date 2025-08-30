@@ -89,3 +89,8 @@ This project is pre-configured for easy deployment to **Vercel**.
     - `DJANGO_API_KEY`: The secret API key used by the proxy to communicate with the backend.
 
 The `vercel.json` configuration in this project will automatically handle proxying all requests from `/api` to your backend, keeping your API key safe and not exposed on the client-side.
+
+## Credits
+
+Favicon used in this project:  
+[Link Square SVG Vector](https://www.svgrepo.com/svg/525987/link-square) by Solar Icons
