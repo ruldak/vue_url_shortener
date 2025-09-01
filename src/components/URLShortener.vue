@@ -430,6 +430,11 @@ h1 {
   .url-form input[type="url"], .url-form input[type="text"] {
     width: 200px;
   }
+  .action-button {
+    padding: 6px 10px;
+    font-weight: 300;
+    font-size: .6rem;
+  }
 }
 
 .link-info {
