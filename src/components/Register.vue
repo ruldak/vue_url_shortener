@@ -3,7 +3,7 @@
     <h2>Register</h2>
     <form @submit.prevent="handleRegister">
       <input type="text" v-model="username" placeholder="Username" required />
-      <input type="email" v-model="email" placeholder="Email (Optional)" required />
+      <input type="email" v-model="email" placeholder="Email (Optional)" />
       <input type="password" v-model="password" placeholder="Password" required />
       <button type="submit" :disabled="isLoading">
         <span v-if="!isLoading">Register</span>
