@@ -22,7 +22,7 @@
       <URLShortener />
     </main>
     <footer>
-      <p>Made with ❤️ by <a href="https://github.com/ruldak" target="_blank">Hari Cahyono</a></p>
+      <p>Made with ❤️ by <a href="https://github.com/ruldak" target="_blank">Hari Cahyono</a> - <a href="https://github.com/ruldak/vue_snippet_share" target="_blank">See the repository</a></p>
     </footer>
   </div>
 </template>
