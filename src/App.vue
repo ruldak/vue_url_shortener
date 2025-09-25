@@ -11,6 +11,12 @@
 
     <main>
       <div v-if="!isAuthenticated" class="auth-container">
+	  
+		<div style="font-size: .8rem; margin-bottom: 10px;">
+		  ⚠️ This authentication system is for demo purposes only. 
+		  Passwords are securely hashed and no sensitive data is collected.
+		</div>
+	  
         <div class="auth-toggle">
           <button :class="{ active: !showRegister }" @click="showRegister = false">Login</button>
           <button :class="{ active: showRegister }" @click="showRegister = true">Register</button>
