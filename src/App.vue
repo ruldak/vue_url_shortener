@@ -109,4 +109,11 @@ footer {
   width: fit-content;
   margin: 0 auto 0 auto;
 }
+
+@media (max-width: 768px) {
+	footer > p {
+		font-size: .8rem;
+		width: 300px;
+	}
+}
 </style>
